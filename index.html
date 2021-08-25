@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Create a draggable Marker</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <!-- Header -->
+
+    <div class="header">
+        <span class="material-icons">coronavirus</span>
+        <h2>Covid-19,Worldwide</h2>
+    </div>
+    <br>
+    <div class="cards_container"></div>
+
+    <!-- Tablele -->
+
+    <div class="content">
+        <div class="Table">
+            <center>
+                <table>
+                    <tr>
+                        <th>Country</th>
+                        <th>Cases</th>
+                        <th>Active</th>
+                        <th>Deaths</th>
+                        <th>Recovered</th>
+                    </tr>
+                </table>
+            </center>
+        </div>
+        <div id="map"></div>
+    </div>
+
+
+</body>
+<script src="./index.js"></script>
+
+</html>

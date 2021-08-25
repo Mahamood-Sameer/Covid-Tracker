@@ -1,0 +1,175 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    box-shadow: 0px 0px 5px grey;
+    background-color: rgb(238, 234, 180);
+}
+.header h2{
+    font-size: 30px;
+    color: red;
+}
+
+.header span{
+    font-size: 50px !important;
+    color: purple;
+}
+
+.cards_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+.cards_container::-webkit-scrollbar{
+    display: none;
+}
+
+.card{
+    padding: 25px;
+    border: 2px solid white;
+    color: white;
+    background-color: black;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px grey;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.Table{
+    flex: 0.5;
+    height: 450px;
+    margin-right: 15px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+
+.Table::-webkit-scrollbar{
+    display: none;
+}
+
+
+tr th , tr td{
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgb(196, 193, 193);
+}
+
+
+#map {
+    margin: 50px auto;
+    height: 445px;
+    flex: 0.5;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px grey;
+}
+
+
+
+.popups{
+    background-color: black;
+    color: rgb(214, 210, 210);
+    padding: 10px;
+    font-size: 12px !important;
+    border-radius: 10px;
+}
+
+
+
+
+/* Responsive */
+
+
+@media (max-width:1028px) and (min-width:691px){
+    .header h2{
+        font-size: 25px;
+    }
+    .header span{
+        font-size: 40px;
+    }
+    .content{
+        flex-direction: column;
+    }
+    .Table{
+        min-width: 450px;
+        flex: unset;
+        margin-right: 0;
+    }
+    #map{
+        flex:unset;
+        width: 90vw;
+    }
+}
+
+@media (max-width:690px) and (min-width:360px){
+    .header h2{
+        font-size: 25px;
+    }
+    .header span{
+        font-size: 40px;
+    }
+    .card{
+        width: 110px;
+        padding: 15px;
+    }
+    .content{
+        flex-direction: column;
+        align-items: unset;
+    }
+    .Table{
+        flex: unset;
+        margin-right: 0;
+    }
+    #map{
+        flex:unset;
+        width: 90vw;
+    }
+    
+}
+@media (max-width:359px) {
+    .header h2{
+        font-size: 20px;
+    }
+    .header span{
+        font-size: 35px;
+    }
+    .card{
+        width: 110px;
+        padding: 15px;
+    }
+    .content{
+        flex-direction: column;
+        align-items: unset;
+    }
+    .Table{
+        flex: unset;
+        margin-right: 0;
+    }
+    #map{
+        flex:unset;
+        width: 90vw;
+    }
+}
