@@ -37,17 +37,45 @@ fetch('https://disease.sh/v3/covid-19/countries').then((responce) => {
 }).then((countries) => {
     console.log(countries)
 
+
+
     // Map 
 
     mapboxgl.accessToken = 'pk.eyJ1IjoibXVubmEyMiIsImEiOiJja3NyNWgyOXMwamw3MnF0ZnBtcDZrdmdlIn0.BZi2LYUpNXfNzF84rF6-_g';
     const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/outdoors-v11',
+        style: 'mapbox://styles/mapbox/streets-v11',
         center: [0, 0],
-        zoom: 2
+        zoom: 7
     });
 
+
+    document.getElementById('Submit').addEventListener('click', (e) => {
+        e.preventDefault()
+        var Country = document.querySelector('select')
+        var lat, long;
+        countries.forEach((country) => {
+            if (country.country === Country.value) {
+                console.log(country.country)
+                lat = country.countryInfo.lat
+                long = country.countryInfo.long
+
+                map.flyTo({
+                    center: [long,lat],
+                    essential: true // this animation is considered essential with respect to prefers-reduced-motion
+                    });
+            }
+        })
+    })
+
+
     countries.forEach((country) => {
+
+
+        //Options
+
+        document.getElementById("SearchCountry").innerHTML += `<option value=${country.country}>${country.country}</option>`
+
         var lat, long
         lat = country.countryInfo.lat
         long = country.countryInfo.long
@@ -65,8 +93,8 @@ fetch('https://disease.sh/v3/covid-19/countries').then((responce) => {
         //Table for each country
 
         var Table = document.querySelector("table")
-        
-        Table.innerHTML +=`
+
+        Table.innerHTML += `
                     <tr>
                         <td>${country.country}</td>
                         <td>${country.cases}</td>
@@ -76,8 +104,6 @@ fetch('https://disease.sh/v3/covid-19/countries').then((responce) => {
                     </tr>
         
         `
-        
-        
 
         // Popup on click
 
