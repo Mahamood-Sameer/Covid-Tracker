@@ -11,8 +11,6 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
-    position: sticky;
-    top: 0;
     box-shadow: 0px 0px 5px grey;
     background-color: rgb(238, 234, 180);
 }
@@ -21,9 +19,10 @@
     color: red;
 }
 
-.header span{
-    font-size: 50px !important;
-    color: purple;
+#Logo{
+    height: 80px;
+    width: 80px;
+    object-fit: contain;
 }
 
 .cards_container{
